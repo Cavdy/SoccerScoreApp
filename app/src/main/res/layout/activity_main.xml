@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#0b0c0c">
+
+    <RelativeLayout
+        android:id="@+id/highlight"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/soccer"
+            android:scaleType="centerCrop"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cavdy League"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:textColor="#ffffff"/>
+        <TextView
+            android:layout_above="@id/man_utd_score"
+            android:layout_toLeftOf="@id/man_utd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Man Utd"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#ffffff"/>
+        <TextView
+            android:layout_marginRight="12dp"
+            android:id="@+id/man_utd_score"
+            android:layout_toLeftOf="@id/man_utd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="0"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="40sp"/>
+        <TextView
+            android:layout_below="@id/man_utd_score"
+            android:layout_toLeftOf="@id/man_utd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="39 Sanchez, 52 Lukaku"
+            android:textSize="12sp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#ffffff"/>
+
+        <ImageView
+            android:id="@+id/man_utd"
+            android:layout_toLeftOf="@id/vs"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/manchester"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:id="@+id/vs"
+            android:layout_width="30dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_height="60dp"
+            android:src="@drawable/vs"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:id="@+id/chelsea"
+            android:layout_toRightOf="@id/vs"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:src="@drawable/chelseafc"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_above="@id/chelsea_score"
+            android:layout_toRightOf="@id/chelsea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chelsea"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#ffffff"/>
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:id="@+id/chelsea_score"
+            android:layout_toRightOf="@id/chelsea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="0"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="40sp"/>
+        <TextView
+            android:layout_below="@id/chelsea_score"
+            android:layout_toRightOf="@id/chelsea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="72 Giroud, 86 Hazard"
+            android:textSize="12sp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#ffffff"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/highlight"
+        android:background="#151616"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stats"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="8dp"
+            android:padding="8dp"
+            android:textAllCaps="true"
+            android:background="#0b0c0c"/>
+
+        <ImageView
+            android:id="@+id/man_utd_stats"
+            android:layout_toLeftOf="@id/time"
+            android:layout_width="60dp"
+            android:layout_height="90dp"
+            android:src="@drawable/manchester"
+            android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:layout_alignParentLeft="true"
+            android:id="@+id/man_utd_yellow_card"
+            android:layout_below="@id/man_utd_stats"
+            android:onClick="man_utd_yellow_card"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="24dp"
+            android:src="@drawable/yellow"/>
+        <TextView
+            android:id="@+id/man_utd_yellow_card_point"
+            android:layout_below="@id/man_utd_stats"
+            android:layout_toRightOf="@id/man_utd_yellow_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:text="0"/>
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:id="@+id/man_utd_red_card"
+            android:layout_below="@id/man_utd_yellow_card"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:onClick="man_utd_red_card"
+            android:layout_marginLeft="24dp"
+            android:src="@drawable/red"/>
+        <TextView
+            android:id="@+id/man_utd_red_card_point"
+            android:layout_toRightOf="@id/man_utd_red_card"
+            android:layout_below="@id/man_utd_yellow_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="24dp"
+            android:text="0"/>
+
+        <ImageView
+            android:id="@+id/man_utd_offside"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/man_utd_red_card"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:onClick="man_utd_offside"
+            android:src="@drawable/offside"/>
+        <TextView
+            android:id="@+id/man_utd_offside_point"
+            android:layout_below="@id/man_utd_red_card"
+            android:layout_toRightOf="@id/man_utd_offside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:paddingRight="12dp"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:text="0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/time"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"
+            android:text="89'"
+            android:textSize="25sp"
+            android:textColor="#ffffff"/>
+
+        <ImageView
+            android:id="@+id/chelsea_stats"
+            android:layout_toRightOf="@id/time"
+            android:layout_width="60dp"
+            android:layout_height="90dp"
+            android:src="@drawable/chelseafc"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:id="@+id/chelsea_yellow_card"
+            android:layout_below="@id/chelsea_stats"
+            android:layout_alignParentRight="true"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:onClick="chelsea_yellow_card"
+            android:layout_marginRight="24dp"
+            android:src="@drawable/yellow"/>
+        <TextView
+            android:id="@+id/chelsea_yellow_card_point"
+            android:layout_below="@id/chelsea_stats"
+            android:layout_marginRight="24dp"
+            android:layout_toLeftOf="@id/chelsea_yellow_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:text="0"/>
+
+        <ImageView
+            android:id="@+id/chelsea_red_card"
+            android:layout_below="@id/chelsea_yellow_card"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:onClick="chelsea_red_card"
+            android:src="@drawable/red"/>
+        <TextView
+            android:id="@+id/chelsea_red_card_point"
+            android:layout_toLeftOf="@id/chelsea_red_card"
+            android:layout_below="@id/chelsea_yellow_card"
+            android:layout_marginRight="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:text="0"/>
+
+        <ImageView
+            android:id="@+id/chelsea_offside"
+            android:layout_below="@id/chelsea_red_card"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:onClick="chelsea_offside"
+            android:layout_height="50dp"
+            android:src="@drawable/offside"/>
+        <TextView
+            android:id="@+id/chelsea_offside_point"
+            android:layout_below="@id/chelsea_red_card"
+            android:layout_marginRight="24dp"
+            android:layout_toLeftOf="@id/chelsea_offside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:text="0"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@id/stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#151616"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
+
+            <Button
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="man_utd"
+                android:text="Goal" />
+
+            
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray">
+
+        </View>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
+
+            <Button
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="chelsea"
+                android:text="Goal" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_marginBottom="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="resetbtn"
+        android:text="Reset" />
+
+</RelativeLayout>
